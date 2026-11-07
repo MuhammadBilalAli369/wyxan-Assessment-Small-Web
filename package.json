@@ -1,0 +1,32 @@
+{
+  "name": "wyxan-small-web",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev -w @small-web/frontend",
+    "dev:backend": "npm run start:dev -w @small-web/backend",
+    "build": "npm run build -w @small-web/shared && npm run build -w @small-web/backend && npm run build -w @small-web/frontend",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test -w @small-web/shared && npm run test -w @small-web/frontend && npm run test -w @small-web/backend",
+    "test:backend": "npm run test -w @small-web/backend",
+    "test:frontend": "npm run test -w @small-web/frontend",
+    "seed": "npm run build -w @small-web/shared && npm run seed -w @small-web/backend",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "setup": "npm install && npm run seed",
+    "start:all": "npm run dev",
+    "test:e2e": "npm run test:e2e -w @small-web/frontend"
+  },
+  "engines": {
+    "node": ">=22.22.2 <23"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

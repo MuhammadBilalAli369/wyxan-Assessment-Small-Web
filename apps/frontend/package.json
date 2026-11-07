@@ -1,0 +1,42 @@
+{
+  "name": "@small-web/frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3847",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:e2e": "playwright test"
+  },
+  "engines": {
+    "node": ">=22.22.2 <23"
+  },
+  "dependencies": {
+    "@small-web/shared": "*",
+    "isomorphic-dompurify": "^4.6.0",
+    "jsdom": "^31.0.0",
+    "next": "^15.2.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.55.0",
+    "@types/jest": "^30.0.0",
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.4.15",
+    "typescript": "^5"
+  }
+}

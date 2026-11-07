@@ -1,0 +1,33 @@
+{
+  "name": "@small-web/shared",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.22.2 <23"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "jest --config jest.config.js && npm run build && node test/sanitize.check.cjs",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/jsdom": "^30.0.0",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.7.0"
+  },
+  "dependencies": {
+    "isomorphic-dompurify": "^4.6.0",
+    "jsdom": "^31.0.0"
+  }
+}
