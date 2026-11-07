@@ -69,4 +69,4 @@ npm run build
 - **Async safety:** navigations are tied to entry ids + a generation counter; Back/Forward/person switches abort and ignore stale responses.
 - **HTML security:** DOMPurify on publish; sandboxed iframe without `allow-same-origin`; trusted bootstrap only.
 
-See `ANALYSIS.md`, `DEMO_SCRIPT.md`, and `CHECKLIST.md`.
+
